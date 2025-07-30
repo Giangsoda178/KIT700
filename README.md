@@ -29,8 +29,11 @@ conda install -c conda-forge pdfminer.six
 
 project/
 ├── Unit Outline.pdf         # Your input PDF file  
+
 ├── pdf2chunk.py                   # The main script  
+
 ├── unit_chunks/
+
 │   └── chunks.json
 
 
@@ -74,5 +77,7 @@ Change unit_code = "KIT514" in pdf.py accordingly
 # 🧠 Embedding Model Used
 
 all-MiniLM-L6-v2
+
 Lightweight & fast
+
 Suitable for semantic chunk comparison and vector search
