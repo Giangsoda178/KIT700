@@ -28,7 +28,8 @@ conda install -c conda-forge pdfminer.six
 # 📁 File Structure
 
 project/
-├── Unit Outline.pdf         # Your input PDF file  
+
+├── Unit Outline.pdf               # Your input PDF file  
 
 ├── pdf2chunk.py                   # The main script  
 
