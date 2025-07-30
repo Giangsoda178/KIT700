@@ -29,7 +29,7 @@ conda install -c conda-forge pdfminer.six
 
 project/
 ├── Unit Outline.pdf         # Your input PDF file  
-├── pdf.py                   # The main script  
+├── pdf2chunk.py                   # The main script  
 ├── unit_chunks/
 │   └── chunks.json
 
@@ -37,10 +37,30 @@ project/
 
 # 🚀 How to Run
 
-python pdf.py
+```bash
+python pdf2chunk.py
+```
+
 After successful execution, you will see output like:
 
 ✅ Successfully saved 7 chunks to unit_chunks/chunks.json
+
+```bash
+python query_chunks.py
+```
+
+You can ask a simple question like: 
+```bash
+what can I learn from kit514
+```
+
+or 
+
+```bash
+what are the assignment in kit514
+```
+
+It will lets you run top-3 retrieval.
 
 ## 🛠 Parameters (Optional)
 
@@ -48,6 +68,8 @@ To adapt this script to other units:
 
 Replace Unit Outline.pdf with your actual PDF filename
 Change unit_code = "KIT514" in pdf.py accordingly
+
+
 
 # 🧠 Embedding Model Used
 
