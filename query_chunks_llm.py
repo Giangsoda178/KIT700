@@ -7,7 +7,7 @@ from openai import OpenAI
 # ====== Groq API Setup ======
 client = OpenAI(
     base_url="https://api.groq.com/openai/v1",
-    api_key="GROQ_API_KEY"
+    api_key="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"
 )
 
 # ====== Load embedding model ======
