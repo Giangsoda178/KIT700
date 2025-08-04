@@ -62,20 +62,19 @@ project/
 
 ## 🚀 How to Run
 
-You might can use ` python pdf2chunk.py ` to run if you are using system python.
+You might can use ` python pdf2chunksss.py ` to run if you are using system python.
 
 
 
 ```bash
-/opt/anaconda3/envs/kit700-env/bin/python askus_chatbot.py
+/opt/anaconda3/envs/kit700-env/bin/python pdf2chunksss.py
 ```
 
-After successful execution, you will see output like:
+After successful execution, you will see the chunks in ` unit_chunks/chunks.json `
 
-✅ Successfully saved 7 chunks to unit_chunks/chunks.json
 
 ```bash
-/opt/anaconda3/envs/kit700-env/bin/python query_chunks.py
+/opt/anaconda3/envs/kit700-env/bin/python query_chunks_llm.py
 ```
 
 You can ask a simple question like: 
@@ -89,14 +88,7 @@ or
 what are the assignment in kit514
 ```
 
-It will lets you run top-3 retrieval.
-
-## 🛠 Parameters (Optional)
-
-To adapt this script to other units:
-
-Replace Unit Outline.pdf with your actual PDF filename
-Change unit_code = "KIT514" in pdf.py accordingly
+It will give you an answer
 
 
 
