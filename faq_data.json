@@ -15,14 +15,14 @@
     "url": "https://askus.utas.edu.au/app/answers/detail/a_id/1235/kw/enrol"
   },
   {
-    "question": "I am waiting on the outcome of my credit application. Do I still need to enrol?",
-    "answer": "",
-    "url": "https://askus.utas.edu.au/app/answers/detail/a_id/1709/kw/enrol"
-  },
-  {
     "question": "Can I enrol in more than 4 units?",
     "answer": "",
     "url": "https://askus.utas.edu.au/app/answers/detail/a_id/1243/kw/enrol"
+  },
+  {
+    "question": "I am waiting on the outcome of my credit application. Do I still need to enrol?",
+    "answer": "",
+    "url": "https://askus.utas.edu.au/app/answers/detail/a_id/1709/kw/enrol"
   },
   {
     "question": "How can I get an Enrolment Confirmation letter?",
