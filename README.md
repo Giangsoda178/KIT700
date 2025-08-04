@@ -1,6 +1,6 @@
 # KIT700 ChatBot
 
-## 📘 Unit Outline Chunk Extractor & Embedding Generator
+# Part1 📘 Unit Outline Chunk Extractor & Embedding Generator
 
 This Python script extracts key sections from a UTAS Unit Outline PDF, generates sentence embeddings using a transformer model, and saves the result as a structured JSON file — ready for vector database ingestion.
 
@@ -23,6 +23,7 @@ Make sure you have the following installed in your virtual environment:
 conda create -n kit700-env python=3.10
 conda activate kit700-env
 conda install -c conda-forge pdfminer.six
+conda install requests beautifulsoup4 scikit-learn              
 ```
 
 # 📁 File Structure
@@ -39,7 +40,7 @@ project/
 
 
 
-# 🚀 How to Run
+## 🚀 How to Run
 
 ```bash
 python pdf2chunk.py
