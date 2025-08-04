@@ -3,12 +3,14 @@
 # Files we play around at week3
 
 You can edit `pdf2chunksss.py` to add more unit outlines.
-Then run `query_chunks_llm.py` to ask questions and get answer.
+
+Then run `query_chunks_llm.py` to ask questions and get answer.(you need to change the groq api key to your own key)
 
 ```bash
 pdf2chunksss.py
 query_chunks_llm.py
 ```
+
 
 You can scrab more pages by editing code and ask questions
 ```bash
