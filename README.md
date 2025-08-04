@@ -4,7 +4,7 @@
 
 You can edit `pdf2chunksss.py` to add more unit outlines.
 
-Then run `query_chunks_llm.py` to ask questions and get answer.(you need to change the groq api key to your own key)
+Then run `query_chunks_llm.py` to ask questions and get answer.
 
 ```bash
 pdf2chunksss.py
