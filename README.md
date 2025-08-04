@@ -33,6 +33,7 @@ This Python script extracts key sections from a UTAS Unit Outline PDF, generates
 ---
 
 ## 📦 Requirements
+If you can not use system python like me
 
 Make sure you have the following installed in your virtual environment:
 
@@ -47,9 +48,11 @@ conda install requests beautifulsoup4 scikit-learn
 
 project/
 
-├── Unit Outline.pdf               # Your input PDF file  
+├── unit_pdfs                         # Your input PDF file folder 
 
-├── pdf2chunk.py                   # The main script  
+├── pdf2chunksss.py                   # The main script  1
+
+├── query_chunks_llm.py                # The main script  2
 
 ├── unit_chunks/
 
