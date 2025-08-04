@@ -1,5 +1,20 @@
 # KIT700 ChatBot
 
+# Files we play around at week3
+
+You can edit `pdf2chunksss.py` to add more unit outlines.
+Then run `query_chunks_llm.py` to ask questions and get answer.
+
+```bash
+pdf2chunksss.py
+query_chunks_llm.py
+```
+
+You can scrab more pages by editing code and ask questions
+```bash
+askus_chatbot.py
+```
+
 # Part1 📘 Unit Outline Chunk Extractor & Embedding Generator
 
 This Python script extracts key sections from a UTAS Unit Outline PDF, generates sentence embeddings using a transformer model, and saves the result as a structured JSON file — ready for vector database ingestion.
