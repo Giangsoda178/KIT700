@@ -1,16 +1,16 @@
 # KIT700 ChatBot
 
-# Files we play around at week3
+# 🆕 Files we play around at week3
+### Code will be updated at the end of week with full json files
 
 You can edit `pdf2chunksss.py` to add more unit outlines.
 
-Then run `query_chunks_llm.py` to ask questions and get answer.
+Then run `query_chunks_llm.py` to ask questions and get answer.(You need to get your own API key on Groq)
 
 ```bash
 pdf2chunksss.py
 query_chunks_llm.py
 ```
-
 
 You can scrab more pages by editing code and ask questions
 ```bash
@@ -59,8 +59,12 @@ project/
 
 ## 🚀 How to Run
 
+You might can use ` python pdf2chunk.py ` to run if you are using system python.
+
+
+
 ```bash
-python pdf2chunk.py
+/opt/anaconda3/envs/kit700-env/bin/python askus_chatbot.py
 ```
 
 After successful execution, you will see output like:
@@ -68,7 +72,7 @@ After successful execution, you will see output like:
 ✅ Successfully saved 7 chunks to unit_chunks/chunks.json
 
 ```bash
-python query_chunks.py
+/opt/anaconda3/envs/kit700-env/bin/python query_chunks.py
 ```
 
 You can ask a simple question like: 
