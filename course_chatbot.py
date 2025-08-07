@@ -24,13 +24,13 @@ url = "https://www.utas.edu.au/courses/cse/courses/k7i-master-of-information-tec
 driver.get(url)
 
 # Click each accordion heading to expand content
-accordion_headers = driver.find_elements(By.CLASS_NAME, "js-accordion-heading")
-for header in accordion_headers:
-    try:
-        header.click()
-        time.sleep(0.5)  # Small delay for animation/DOM update
-    except Exception as e:
-        print(f"❌ Error clicking accordion: {e}")
+#accordion_headers = driver.find_elements(By.CLASS_NAME, "js-accordion-heading")
+#for header in accordion_headers:
+#    try:
+#        header.click()
+#        time.sleep(0.5)  # Small delay for animation/DOM update
+#    except Exception as e:
+#        print(f"❌ Error clicking accordion: {e}")
 
 # Now parse the fully loaded HTML
 soup = BeautifulSoup(driver.page_source, 'html.parser')
@@ -41,6 +41,10 @@ course_data = {
     "title": "",
     "overview": "",
     "duration": "",
+    "course_objectives": "",
+    "learning_outcomes": "",
+    "practical_experience": "",
+    "work_placement": "",
     "entry_requirements": "",
     "career_outcomes": "",
     "fees": "",
@@ -61,6 +65,34 @@ duration_tag = soup.find('dd', class_='meta-list--item__time')
 if duration_tag:
     duration_text = duration_tag.find('span', class_='meta-list--item-inner').contents[0].strip()
     course_data["duration"] = duration_text
+
+course_objectives_div = soup.find("div", id="course-objectives")
+if course_objectives_div:
+    # Optional: look for richtext content within it
+    content_div = course_objectives_div.find("div", class_="richtext richtext__medium")
+    
+    if content_div:
+        course_objectives_text = content_div.get_text(separator="\n", strip=True)
+    else:
+        course_objectives_text = course_objectives_div.get_text(separator="\n", strip=True)
+    
+    course_data["course_objectives"] = course_objectives_text
+else:
+    course_data["course_objectives"] = "N/A"
+
+learning_outcomes_div = soup.find("div", id="learning-outcomes")
+if learning_outcomes_div:
+    # Optional: look for richtext content within it
+    content_div = learning_outcomes_div.find("div", class_="richtext richtext__medium")
+    
+    if content_div:
+        learning_outcomes_text = content_div.get_text(separator="\n", strip=True)
+    else:
+        learning_outcomes_text = learning_outcomes_div.get_text(separator="\n", strip=True)
+    
+    course_data["learning_outcomes"] = learning_outcomes_text
+else:
+    course_data["learning_outcomes"] = "N/A"
 
 # Save to JSON
 with open('course_data.json', 'w', encoding='utf-8') as f:
