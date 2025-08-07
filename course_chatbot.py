@@ -45,8 +45,9 @@ course_data = {
     "learning_outcomes": "",
     "practical_experience": "",
     "work_placement": "",
-    "entry_requirements": "",
     "career_outcomes": "",
+    "course_structure": "",
+    "entry_requirements": "",
     "fees": "",
     "structure": ""
 }
@@ -80,6 +81,17 @@ course_data["course_objectives"] = extract_section_text(soup, "course-objectives
 course_data["learning_outcomes"] = extract_section_text(soup, "learning-outcomes")
 course_data["practical_experience"] = extract_section_text(soup, "practical-experience")
 course_data["work_placement"] = extract_section_text(soup, "opportunities-abroad")
+
+def extract_section_by_heading_id(soup, heading_id):
+    heading = soup.find(['h2', 'h3'], id=heading_id)
+    if heading:
+        content = heading.find_next('div', class_='richtext richtext__medium')
+        if content:
+            return content.get_text(separator="\n", strip=True)
+    return "N/A"
+
+course_data["career_outcomes"] = extract_section_by_heading_id(soup, "career-outcomes")
+course_data["course_structure"] = extract_section_by_heading_id(soup, "course-structure")
 
 # Save to JSON
 with open('course_data.json', 'w', encoding='utf-8') as f:
