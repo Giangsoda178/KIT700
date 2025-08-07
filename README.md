@@ -1,6 +1,7 @@
 # KIT700 ChatBot
 
 # 🆕 Files we play around at week3
+
 ### Code will be updated at the end of week with full json files
 
 You can edit `pdf2chunksss.py` to add more unit outlines.
@@ -13,6 +14,7 @@ query_chunks_llm.py
 ```
 
 You can scrab more pages by editing code and ask questions
+
 ```bash
 askus_chatbot.py
 ```
@@ -25,14 +27,15 @@ This Python script extracts key sections from a UTAS Unit Outline PDF, generates
 
 ## ✅ What it does
 
-- Extracts text from a Unit Outline PDF  
-- Splits it into chunks based on predefined section titles  
-- Generates embeddings using `all-MiniLM-L6-v2` from Sentence Transformers  
-- Saves each chunk with metadata to `unit_chunks/chunks.json`  
+- Extracts text from a Unit Outline PDF
+- Splits it into chunks based on predefined section titles
+- Generates embeddings using `all-MiniLM-L6-v2` from Sentence Transformers
+- Saves each chunk with metadata to `unit_chunks/chunks.json`
 
 ---
 
 ## 📦 Requirements
+
 If you can not use system python like me
 
 Make sure you have the following installed in your virtual environment:
@@ -41,56 +44,58 @@ Make sure you have the following installed in your virtual environment:
 conda create -n kit700-env python=3.10
 conda activate kit700-env
 conda install -c conda-forge pdfminer.six
-conda install requests beautifulsoup4 scikit-learn              
+conda install requests beautifulsoup4 scikit-learn
+```
+
+```bash
+pip install pdfminer.six
+pip install sentence-transformers
+pip install numpy
+pip install scikit-learn
+pip install openai
 ```
 
 # 📁 File Structure
 
 project/
 
-├── unit_pdfs                         # Your input PDF file folder 
+├── unit_pdfs # Your input PDF file folder
 
-├── pdf2chunksss.py                   # The main script  1
+├── pdf2chunksss.py # The main script 1
 
-├── query_chunks_llm.py                # The main script  2
+├── query_chunks_llm.py # The main script 2
 
 ├── unit_chunks/
 
-│   └── chunks.json
-
-
+│ └── chunks.json
 
 ## 🚀 How to Run
 
-You might can use ` python pdf2chunksss.py ` to run if you are using system python.
-
-
+You might can use `python pdf2chunksss.py` to run if you are using system python.
 
 ```bash
 /opt/anaconda3/envs/kit700-env/bin/python pdf2chunksss.py
 ```
 
-After successful execution, you will see the chunks in ` unit_chunks/chunks.json `
-
+After successful execution, you will see the chunks in `unit_chunks/chunks.json`
 
 ```bash
 /opt/anaconda3/envs/kit700-env/bin/python query_chunks_llm.py
 ```
 
-You can ask a simple question like: 
+You can ask a simple question like:
+
 ```bash
 what can I learn from kit514
 ```
 
-or 
+or
 
 ```bash
 what are the assignment in kit514
 ```
 
 It will give you an answer
-
-
 
 # 🧠 Embedding Model Used
 
