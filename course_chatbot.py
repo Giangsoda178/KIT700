@@ -23,6 +23,15 @@ driver = webdriver.Chrome(service=service, options=options)
 url = "https://www.utas.edu.au/courses/cse/courses/k7i-master-of-information-technology-and-systems?year=2026"
 driver.get(url)
 
+# Click each accordion heading to expand content
+accordion_headers = driver.find_elements(By.CLASS_NAME, "js-accordion-heading")
+for header in accordion_headers:
+    try:
+        header.click()
+        time.sleep(0.5)  # Small delay for animation/DOM update
+    except Exception as e:
+        print(f"❌ Error clicking accordion: {e}")
+
 # Now parse the fully loaded HTML
 soup = BeautifulSoup(driver.page_source, 'html.parser')
 driver.quit()
@@ -47,6 +56,11 @@ if title_tag:
 overview_block = soup.select_one("div.richtext.richtext__medium")
 overview_text = overview_block.get_text(separator="\n", strip=True) if overview_block else "N/A"
 course_data["overview"] = overview_text
+
+duration_tag = soup.find('dd', class_='meta-list--item__time')
+if duration_tag:
+    duration_text = duration_tag.find('span', class_='meta-list--item-inner').contents[0].strip()
+    course_data["duration"] = duration_text
 
 # Save to JSON
 with open('course_data.json', 'w', encoding='utf-8') as f:
