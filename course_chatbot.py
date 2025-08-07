@@ -66,33 +66,20 @@ if duration_tag:
     duration_text = duration_tag.find('span', class_='meta-list--item-inner').contents[0].strip()
     course_data["duration"] = duration_text
 
-course_objectives_div = soup.find("div", id="course-objectives")
-if course_objectives_div:
-    # Optional: look for richtext content within it
-    content_div = course_objectives_div.find("div", class_="richtext richtext__medium")
-    
-    if content_div:
-        course_objectives_text = content_div.get_text(separator="\n", strip=True)
-    else:
-        course_objectives_text = course_objectives_div.get_text(separator="\n", strip=True)
-    
-    course_data["course_objectives"] = course_objectives_text
-else:
-    course_data["course_objectives"] = "N/A"
+def extract_section_text(soup, section_id):
+    section_div = soup.find("div", id=section_id)
+    if section_div:
+        content_div = section_div.find("div", class_="richtext richtext__medium")
+        if content_div:
+            return content_div.get_text(separator="\n", strip=True)
+        else:
+            return section_div.get_text(separator="\n", strip=True)
+    return "N/A"
 
-learning_outcomes_div = soup.find("div", id="learning-outcomes")
-if learning_outcomes_div:
-    # Optional: look for richtext content within it
-    content_div = learning_outcomes_div.find("div", class_="richtext richtext__medium")
-    
-    if content_div:
-        learning_outcomes_text = content_div.get_text(separator="\n", strip=True)
-    else:
-        learning_outcomes_text = learning_outcomes_div.get_text(separator="\n", strip=True)
-    
-    course_data["learning_outcomes"] = learning_outcomes_text
-else:
-    course_data["learning_outcomes"] = "N/A"
+course_data["course_objectives"] = extract_section_text(soup, "course-objectives")
+course_data["learning_outcomes"] = extract_section_text(soup, "learning-outcomes")
+course_data["practical_experience"] = extract_section_text(soup, "practical-experience")
+course_data["work_placement"] = extract_section_text(soup, "opportunities-abroad")
 
 # Save to JSON
 with open('course_data.json', 'w', encoding='utf-8') as f:
