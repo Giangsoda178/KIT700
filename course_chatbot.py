@@ -92,7 +92,96 @@ def extract_section_by_heading_id(soup, heading_id):
     return "N/A"
 
 course_data["career_outcomes"] = extract_section_by_heading_id(soup, "career-outcomes")
-course_data["course_structure"] = extract_section_by_heading_id(soup, "course-structure")
+
+
+def extract_course_structure_units(soup, base_url="https://www.utas.edu.au"):
+    course_structure_data = {}
+    course_structure_heading = soup.find(['h2', 'h3'], id="course-structure")
+
+    if course_structure_heading:
+        course_structure_container = course_structure_heading.find_next("div", class_="block block__pad-lg block__shadowed")
+        if course_structure_container:
+            # Find direct child accordion panels for categories
+            sections = course_structure_container.find_all("section", class_="accordion--panel")
+
+            for section in sections:
+                # Category title (e.g., "Core Units")
+                category_tag = section.find("a", class_="accordion--link")
+                category_name = category_tag.get_text(strip=True) if category_tag else "Unknown"
+
+                units = []
+
+                unit_divs = section.find_all("div", class_="accordion--panel", recursive=False)
+                if not unit_divs:
+                    # Fallback: if no direct divs found, search inside section deeper but exclude nested categories
+                    unit_divs = section.select("div.accordion--panel")
+
+                for unit_div in unit_divs:
+                    # Check if this is a unit by presence of unit-list--code class
+                    code_tag = unit_div.select_one(".unit-list--code")
+                    if not code_tag:
+                        continue  # skip if not a unit
+
+                    name_tag = unit_div.select_one(".unit-list--name")
+                    details_link_tag = unit_div.select_one(".unit-list--more.accordion--link")
+                    credit_tag = unit_div.find("strong", string=lambda t: t and "Credit Points:" in t)
+                    description_tag = unit_div.select_one(".unit-list--introduction p")
+
+                    credit_points = ""
+                    if credit_tag:
+                        # The credit points number usually is in the next sibling text node, e.g. " 12.5"
+                        next_sib = credit_tag.next_sibling
+                        if next_sib:
+                            credit_points = next_sib.strip()
+
+                    def extract_headers_with_colspan(header_row):
+                        headers = []
+                        for th in header_row.find_all("th"):
+                            text = th.get_text(strip=True)
+                            colspan = int(th.get('colspan', 1))
+                            if colspan > 1:
+                                for i in range(colspan):
+                                    # add index suffix to distinguish columns
+                                    headers.append(f"{text} {i+1}")
+                            else:
+                                headers.append(text)
+                        return headers
+                        
+                    # Extract availability table
+                    availability_table = unit_div.find("table", class_="table__unit-availabilities")
+                    unit_availability = []
+                    if availability_table:
+                        header_row = availability_table.select_one("thead tr")
+                        headers = extract_headers_with_colspan(header_row)
+
+                        rows = availability_table.select("tbody tr")
+                        for row in rows:
+                            cells = row.find_all(["td", "th"])
+                            row_data = {}
+                            for i, cell in enumerate(cells):
+                                icon = cell.find("i")
+                                if icon and icon.has_attr("title"):
+                                    value = icon["title"].strip()
+                                else:
+                                    value = cell.get_text(strip=True)
+                                header = headers[i] if i < len(headers) else f"col{i+1}"
+                                row_data[header] = value
+                            unit_availability.append(row_data)
+
+                    units.append({
+                        "unit_code": code_tag.get_text(strip=True),
+                        "unit_title": name_tag.get_text(strip=True) if name_tag else "",
+                        "unit_details_link": base_url + details_link_tag['href'] if details_link_tag and details_link_tag.has_attr('href') else "",
+                        "unit_credit_points": credit_points,
+                        "unit_description": description_tag.get_text(strip=True) if description_tag else "",
+                        "unit_availability": unit_availability
+                    })
+
+                course_structure_data[category_name] = units
+
+    return course_structure_data or "N/A"
+
+course_data["course_structure"] = extract_course_structure_units(soup)
 
 
 entry_requirements = {}
