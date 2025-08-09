@@ -30,6 +30,24 @@ for key, value in course_data.items():
             )
         )
 
+# Recursively add nested dicts in entry_requirements and fees
+def flatten_nested_text(d, parent_key=""):
+    docs = []
+    for k, v in d.items():
+        key_name = f"{parent_key} - {k}" if parent_key else k
+        if isinstance(v, str):
+            clean_value = re.sub(r'\s+', ' ', v).strip()
+            docs.append(Document(
+                page_content=f"{key_name.replace('_', ' ').title()}: {clean_value}",
+                metadata={"source": key_name, "title": course_title}
+            ))
+        elif isinstance(v, dict):
+            docs.extend(flatten_nested_text(v, key_name))
+    return docs
+
+documents.extend(flatten_nested_text(course_data.get("entry_requirements", {})))
+documents.extend(flatten_nested_text(course_data.get("fees", {})))
+
 # Process the nested course structure for units
 course_structure = course_data.get("course_structure", {})
 for section_title, units in course_structure.items():
