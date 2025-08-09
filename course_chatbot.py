@@ -46,9 +46,9 @@ course_data = {
     "practical_experience": "",
     "work_placement": "",
     "career_outcomes": "",
-    "course_structure": "",
     "entry_requirements": "",
-    "fees": ""
+    "fees": "",
+    "course_structure": ""
 }
 
 title_tag = soup.find('h1', class_='l-object-page-header--page-title')
@@ -92,6 +92,57 @@ def extract_section_by_heading_id(soup, heading_id):
     return "N/A"
 
 course_data["career_outcomes"] = extract_section_by_heading_id(soup, "career-outcomes")
+
+
+entry_requirements = {}
+entry_requirements_header = soup.find("h2", id="entry-requirements")
+
+if entry_requirements_header:
+    # The container div follows the h2
+    entry_container = entry_requirements_header.find_next("div", class_="block block__pad-lg block__shadowed")
+    if entry_container:
+        accordion_sections = entry_container.find_all("section", class_="accordion--panel")
+        
+        for section in accordion_sections:
+            # Get the section title (e.g., "For Domestic students")
+            title_tag = section.find("a", class_="requirements accordion--link")
+            title = title_tag.get_text(strip=True) if title_tag else "Unknown"
+
+            # Get the accordion body content
+            content_div = section.find("div", class_="accordion--content")
+            content = content_div.get_text(separator="\n", strip=True) if content_div else ""
+
+            # Save to dictionary
+            entry_requirements[title] = content
+
+course_data["entry_requirements"] = entry_requirements
+
+fees = {}
+fees_header = soup.find("h2", id="fees-and-scholarships")
+
+if fees_header:
+    fees_container = fees_header.find_next("div", class_="block block__pad-lg block__shadowed")
+    if fees_container:
+        fees_sections = fees_container.find_all("section", class_="sectioned-content")
+
+        for section in fees_sections:
+            title_tag = section.find("h4", class_="sectioned-content--title")
+            content_div = section.find("div", class_="richtext richtext__medium")
+            if not title_tag or not content_div:
+                continue
+
+            title = title_tag.get_text(strip=True)
+            content = content_div.get_text(separator="\n", strip=True)
+
+            if "International" in title:
+                if title not in fees:
+                    fees[title] = content
+                else:
+                    fees[title] += "\n\n" + content  # Append additional content
+            else:
+                fees[title] = content
+
+course_data["fees"] = fees
 
 
 def extract_course_structure_units(soup, base_url="https://www.utas.edu.au"):
@@ -182,57 +233,6 @@ def extract_course_structure_units(soup, base_url="https://www.utas.edu.au"):
     return course_structure_data or "N/A"
 
 course_data["course_structure"] = extract_course_structure_units(soup)
-
-
-entry_requirements = {}
-entry_requirements_header = soup.find("h2", id="entry-requirements")
-
-if entry_requirements_header:
-    # The container div follows the h2
-    entry_container = entry_requirements_header.find_next("div", class_="block block__pad-lg block__shadowed")
-    if entry_container:
-        accordion_sections = entry_container.find_all("section", class_="accordion--panel")
-        
-        for section in accordion_sections:
-            # Get the section title (e.g., "For Domestic students")
-            title_tag = section.find("a", class_="requirements accordion--link")
-            title = title_tag.get_text(strip=True) if title_tag else "Unknown"
-
-            # Get the accordion body content
-            content_div = section.find("div", class_="accordion--content")
-            content = content_div.get_text(separator="\n", strip=True) if content_div else ""
-
-            # Save to dictionary
-            entry_requirements[title] = content
-
-course_data["entry_requirements"] = entry_requirements
-
-fees = {}
-fees_header = soup.find("h2", id="fees-and-scholarships")
-
-if fees_header:
-    fees_container = fees_header.find_next("div", class_="block block__pad-lg block__shadowed")
-    if fees_container:
-        fees_sections = fees_container.find_all("section", class_="sectioned-content")
-
-        for section in fees_sections:
-            title_tag = section.find("h4", class_="sectioned-content--title")
-            content_div = section.find("div", class_="richtext richtext__medium")
-            if not title_tag or not content_div:
-                continue
-
-            title = title_tag.get_text(strip=True)
-            content = content_div.get_text(separator="\n", strip=True)
-
-            if "International" in title:
-                if title not in fees:
-                    fees[title] = content
-                else:
-                    fees[title] += "\n\n" + content  # Append additional content
-            else:
-                fees[title] = content
-
-course_data["fees"] = fees
 
 with open('course_data.json', 'w', encoding='utf-8') as f:
     json.dump(course_data, f, indent=4, ensure_ascii=False)
