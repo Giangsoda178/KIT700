@@ -48,7 +48,7 @@ while True:
 
         Question: {query}
 
-        Based *only* on the context provided, answer the question clearly and concisely. If the context doesn't contain the answer, say "I'm sorry, I don't have enough information to answer that question. Please check the UTAS website for more information."
+        Based *only* on the context provided, answer the question clearly and concisely. If the context doesn't contain the answer, say "I'm sorry, I don't have enough information to answer that question. Please check the UTAS website (www.utas.edu.au) for more information."
         """
 
     # Step 3: Call Groq API
