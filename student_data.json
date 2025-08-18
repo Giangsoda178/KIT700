@@ -1,0 +1,112 @@
+[
+  {
+    "student_id": "482917",
+    "first_name": "Olivia",
+    "last_name": "Smith",
+    "school_email": "olivia.smith@utas.edu.au",
+    "password": "Olivia123",
+    "domestic": true,
+    "course": "Master of Information Technology and Systems",
+    "course_code": "K7I",
+    "start_date": "July 2023"
+  },
+  {
+    "student_id": "106482",
+    "first_name": "Minh",
+    "last_name": "Tran",
+    "school_email": "minh.tran@utas.edu.au",
+    "password": "Minh123",
+    "domestic": false,
+    "course": "Bachelor of Information and Communication Technology",
+    "course_code": "P3T",
+    "start_date": "February 2024"
+  },
+  {
+    "student_id": "759314",
+    "first_name": "Jack",
+    "last_name": "Williams",
+    "school_email": "jack.williams@utas.edu.au",
+    "password": "Jack123",
+    "domestic": true,
+    "course": "Bachelor of Information and Communication Technology",
+    "course_code": "P3T",
+    "start_date": "February 2020"
+  },
+  {
+    "student_id": "894265",
+    "first_name": "Li",
+    "last_name": "Wang",
+    "school_email": "li.wang@utas.edu.au",
+    "password": "Li123",
+    "domestic": false,
+    "course": "Master of Information Technology and Systems",
+    "course_code": "K7I",
+    "start_date": "July 2024"
+  },
+  {
+    "student_id": "231087",
+    "first_name": "Sophie",
+    "last_name": "Brown",
+    "school_email": "sophie.brown@utas.edu.au",
+    "password": "Sophie123",
+    "domestic": true,
+    "course": "Master of Information Technology and Systems",
+    "course_code": "K7I",
+    "start_date": "February 2022"
+  },
+  {
+    "student_id": "643918",
+    "first_name": "Ayesha",
+    "last_name": "Rahman",
+    "school_email": "ayesha.rahman@utas.edu.au",
+    "password": "Ayesha123",
+    "domestic": false,
+    "course": "Bachelor of Information and Communication Technology",
+    "course_code": "P3T",
+    "start_date": "July 2023"
+  },
+  {
+    "student_id": "370125",
+    "first_name": "Liam",
+    "last_name": "Johnson",
+    "school_email": "liam.johnson@utas.edu.au",
+    "password": "Liam123",
+    "domestic": true,
+    "course": "Bachelor of Information and Communication Technology",
+    "course_code": "P3T",
+    "start_date": "July 2019"
+  },
+  {
+    "student_id": "529804",
+    "first_name": "Raj",
+    "last_name": "Patel",
+    "school_email": "raj.patel@utas.edu.au",
+    "password": "Raj123",
+    "domestic": false,
+    "course": "Master of Information Technology and Systems",
+    "course_code": "K7I",
+    "start_date": "February 2025"
+  },
+  {
+    "student_id": "418672",
+    "first_name": "Isla",
+    "last_name": "Taylor",
+    "school_email": "isla.taylor@utas.edu.au",
+    "password": "Isla123",
+    "domestic": true,
+    "course": "Master of Information Technology and Systems",
+    "course_code": "K7I",
+    "start_date": "February 2021"
+  },
+  {
+    "student_id": "765039",
+    "first_name": "Wei",
+    "last_name": "Chen",
+    "school_email": "wei.chen@utas.edu.au",
+    "password": "Wei123",
+    "domestic": false,
+    "course": "Bachelor of Information and Communication Technology",
+    "course_code": "P3T",
+    "start_date": "February 2025"
+  }
+]
