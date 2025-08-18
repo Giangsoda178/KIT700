@@ -1,0 +1,120 @@
+[
+  {
+    "student_id": "482917",
+    "classes": [
+      {"unit_code": "KIT509", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT509", "type": "tutorial", "day": "Wednesday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT712", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT712", "type": "tutorial", "day": "Thursday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT718", "type": "lecture", "day": "Wednesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT718", "type": "tutorial", "day": "Friday", "start": "13:00", "end": "15:00"}
+    ]
+  },
+  {
+    "student_id": "106482",
+    "classes": [
+      {"unit_code": "KIT107", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT107", "type": "tutorial", "day": "Tuesday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT108", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT108", "type": "tutorial", "day": "Thursday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT205", "type": "lecture", "day": "Wednesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT205", "type": "tutorial", "day": "Friday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT217", "type": "lecture", "day": "Thursday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT217", "type": "tutorial", "day": "Monday", "start": "15:00", "end": "17:00"}
+    ]
+  },
+  {
+    "student_id": "759314",
+    "classes": [
+      {"unit_code": "KIT107", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT107", "type": "tutorial", "day": "Monday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT108", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT108", "type": "tutorial", "day": "Wednesday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT205", "type": "lecture", "day": "Wednesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT205", "type": "tutorial", "day": "Thursday", "start": "13:00", "end": "15:00"}
+    ]
+  },
+  {
+    "student_id": "894265",
+    "classes": [
+      {"unit_code": "KIT509", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT509", "type": "tutorial", "day": "Monday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT712", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT712", "type": "tutorial", "day": "Tuesday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT718", "type": "lecture", "day": "Wednesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT718", "type": "tutorial", "day": "Thursday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT719", "type": "lecture", "day": "Thursday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT719", "type": "tutorial", "day": "Friday", "start": "09:00", "end": "11:00"}
+    ]
+  },
+  {
+    "student_id": "231087",
+    "classes": [
+      {"unit_code": "KIT509", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT509", "type": "tutorial", "day": "Tuesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT712", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT712", "type": "tutorial", "day": "Thursday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT718", "type": "lecture", "day": "Wednesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT718", "type": "tutorial", "day": "Friday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT719", "type": "lecture", "day": "Thursday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT719", "type": "tutorial", "day": "Monday", "start": "15:00", "end": "17:00"}
+    ]
+  },
+  {
+    "student_id": "643918",
+    "classes": [
+      {"unit_code": "KIT107", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT107", "type": "tutorial", "day": "Wednesday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT108", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT108", "type": "tutorial", "day": "Thursday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT205", "type": "lecture", "day": "Wednesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT205", "type": "tutorial", "day": "Friday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT217", "type": "lecture", "day": "Thursday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT217", "type": "tutorial", "day": "Monday", "start": "15:00", "end": "17:00"}
+    ]
+  },
+  {
+    "student_id": "370125",
+    "classes": [
+      {"unit_code": "KIT107", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT107", "type": "tutorial", "day": "Tuesday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT108", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT108", "type": "tutorial", "day": "Wednesday", "start": "13:00", "end": "15:00"}
+    ]
+  },
+  {
+    "student_id": "529804",
+    "classes": [
+      {"unit_code": "KIT509", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT509", "type": "tutorial", "day": "Thursday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT712", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT712", "type": "tutorial", "day": "Friday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT718", "type": "lecture", "day": "Wednesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT718", "type": "tutorial", "day": "Monday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT719", "type": "lecture", "day": "Thursday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT719", "type": "tutorial", "day": "Tuesday", "start": "13:00", "end": "15:00"}
+    ]
+  },
+  {
+    "student_id": "418672",
+    "classes": [
+      {"unit_code": "KIT509", "type": "lecture", "day": "Monday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT509", "type": "tutorial", "day": "Wednesday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT712", "type": "lecture", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT712", "type": "tutorial", "day": "Thursday", "start": "15:00", "end": "17:00"}
+    ]
+  },
+  {
+    "student_id": "765039",
+    "classes": [
+      {"unit_code": "KIT205", "type": "lecture", "day": "Wednesday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT205", "type": "tutorial", "day": "Thursday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT217", "type": "lecture", "day": "Thursday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT217", "type": "tutorial", "day": "Monday", "start": "15:00", "end": "17:00"},
+      {"unit_code": "KIT318", "type": "lecture", "day": "Friday", "start": "09:00", "end": "11:00"},
+      {"unit_code": "KIT318", "type": "tutorial", "day": "Tuesday", "start": "11:00", "end": "13:00"},
+      {"unit_code": "KIT315", "type": "lecture", "day": "Friday", "start": "13:00", "end": "15:00"},
+      {"unit_code": "KIT315", "type": "tutorial", "day": "Thursday", "start": "15:00", "end": "17:00"}
+    ]
+  }
+]
